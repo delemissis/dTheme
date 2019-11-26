@@ -23,4 +23,4 @@ Add Logo through _Wordpress Theme Customization Menu_ to show in NavBar.
 
 ### Comments
 
-- Dark Theme keeps looses its settings when navigating to different pages on the blog.
+- Dark Theme looses its settings when navigating to different pages on the blog.
