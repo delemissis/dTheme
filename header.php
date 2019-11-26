@@ -10,13 +10,11 @@
 <?php do_action( 'wp_body_open' ); ?>
 <div class="site" id="page">
 
-	<!-- ******************* The Navbar Area ******************* -->
 	<div id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
 		<nav class="navbar navbar-expand-md navbar-dark custom_navbar">
 
 			<div class="container">
 
-					<!-- Your site title as branding in the menu -->
 					<?php if ( ! has_custom_logo() ) { ?>
 
 						<?php if ( is_front_page() && is_home() ) : ?>
@@ -32,13 +30,12 @@
 
 					<?php } else {?>
 						<div class="navbar-brand logo_custom"><?php the_custom_logo();?></div>
-					<?php } ?><!-- end custom logo -->
+					<?php } ?>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation'); ?>">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<!-- The WordPress Menu goes here -->
 				<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
