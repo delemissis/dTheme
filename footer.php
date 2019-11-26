@@ -6,7 +6,7 @@
 
 					<div class="col-md-6 site-info footer-text">
 
-						<p>This is the footer text!</p>
+						<p>&copy; <?php echo date("Y"); ?> | <b>dTheme</b> by dele.</p>
 
 					</div><!-- .site-info -->
 

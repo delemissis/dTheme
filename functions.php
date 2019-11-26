@@ -43,10 +43,10 @@ function theme_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'custom_background_args', array(
-		'default-color' => 'ffffff',
-			'default-image' => '',
-	) ) );
+	// add_theme_support( 'custom-background', apply_filters( 'custom_background_args', array(
+	// 	'default-color' => 'ffffff',
+	// 		'default-image' => '',
+	// ) ) );
 
 	// Set up the WordPress Theme logo feature.
 	add_theme_support( 'custom-logo' );
@@ -55,6 +55,17 @@ function theme_setup() {
 	add_theme_support( 'responsive-embeds' );
 }
 
+// Active Menu Links
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+  if (in_array('current-menu-item', $classes) ){
+    $classes[] = 'active ';
+  }
+  return $classes;
+}
+
+// Load Files
 function wp4wp_scripts() {
 	wp_enqueue_style('main_css', get_template_directory_uri() . '/assets/styles/main.css', array(), '1.0', false);
 	wp_enqueue_script('main_js', get_template_directory_uri() . '/assets/scripts/main.js', array(), '1.0', true);

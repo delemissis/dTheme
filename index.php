@@ -4,7 +4,7 @@ get_header();
 
 ?>
 
-<div class="wrapper" id="index-wrapper">
+<div class="wrapper light-theme" id="index-wrapper">
 
 	<div class="container" id="content" tabindex="-1">
 
@@ -22,13 +22,20 @@ get_header();
 
                             <header class="entry-header">
 
-                                <h2 class = "entry-title">
-
-                                    <?php the_title() ?>
-                                    
-                                </h2>
-                                    
+                                <?php
+                                    the_title(
+                                        sprintf( '<h2 class="entry-title"><a id="entry-title-link" class="light-theme" href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
+                                        '</a></h2>'
+                                    );
+                                ?>
+                                                                        
                             </header><!-- .entry-header -->
+
+                            <div class="entry-meta light-theme">
+
+                                <?php the_author(); ?> | <?php the_date(); ?>    
+                            
+                            </div>
 
                             <div class="entry-content">
 

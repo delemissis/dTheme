@@ -1,34 +1,56 @@
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-// Some basic padding for all wrappers
+// Fonts Import
+@font-face {
+  font-family: "Charter";
+  src: url(/wp-content/themes/dtheme/assets/fonts/charter_regular-webfont.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Marat Sans DemiBold";
+  font-style: normal;
+  font-weight: normal;
+  src: url(/wp-content/themes/dtheme/assets/fonts/Marat_Sans_DemiBold.woff);
+}
+
+@font-face {
+  font-family: "Marat Sans Medium";
+  font-style: normal;
+  font-weight: normal;
+  src: url(/wp-content/themes/dtheme/assets/fonts/Marat_Sans_Medium.woff);
+}
+
+@font-face {
+  font-family: "Marat Sans Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url(/wp-content/themes/dtheme/assets/fonts/Marat_Sans_Regular.woff);
+}
+
 .wrapper {
   padding: $grid-gutter-width 0;
 }
 
-// Reset hero wrapper padding to 0
 #wrapper-hero {
   padding: 0px !important;
 }
 
-// Adding basic WordPress classes to pass the WordPress.org tests
 .sticky,
 .gallery-caption,
 .bypostauthor {
   font-size: inherit;
 }
 
-// Separate sticky wrapper from main content
 .wrapper#wrapper-sticky {
   border-bottom: 1px solid $gray-300;
 }
 
-// Adding some contrast background color to footer full widget
 #wrapper-footer-full,
 #wrapper-static-hero {
   background-color: $gray-200;
 }
 
-// Necessary WP classes
 .wp-caption {
   font-size: inherit;
 }
@@ -43,13 +65,11 @@
 
 .alignleft {
   display: inline;
-  float: left;
   margin-right: 1.5em;
 }
 
 .alignright {
   display: inline;
-  float: right;
   margin-left: 1.5em;
 }
 
@@ -57,12 +77,10 @@
   @extend .mx-auto;
 }
 
-// Post design
 .entry-footer span {
   padding-right: 10px;
 }
 
-// Limit featured image size to 100%
 img.wp-post-image,
 article img,
 figure,
@@ -72,7 +90,6 @@ img,
   height: auto;
 }
 
-// Skip to content link
 a.skip-link {
   position: fixed;
   z-index: 1000;
@@ -80,18 +97,17 @@ a.skip-link {
   right: 0px;
 }
 
-// Dropdown translation
 .navbar-dark .navbar-nav .dropdown-menu .nav-link {
   display: block;
-  width: 100%; // For `<button>`s
+  width: 100%;
   padding: $dropdown-item-padding-y $dropdown-item-padding-x;
   clear: both;
   font-weight: $font-weight-normal;
   color: $dropdown-link-color !important;
-  text-align: inherit; // For `<button>`s
-  white-space: nowrap; // prevent links from randomly breaking onto new lines
-  background: none; // For `<button>`s
-  border: 0; // For `<button>`s
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: 0;
 
   @include hover-focus {
     color: $dropdown-link-hover-color !important;
@@ -110,7 +126,6 @@ a.skip-link {
   &:disabled {
     color: $dropdown-link-disabled-color !important;
     background-color: transparent;
-    // Remove CSS gradients if they're enabled
     @if $enable-gradients {
       background-image: none;
     }
@@ -134,7 +149,8 @@ a.skip-link {
 }
 
 .navbar h1 {
-  font-weight: $font-weight-normal;
+  font-family: Marat Sans DemiBold;
+  font-size: 2.9rem;
 }
 
 .custom-logo {
@@ -143,6 +159,51 @@ a.skip-link {
 
 .collapse.navbar-collapse .navbar-nav .menu-item {
   color: red;
+}
+
+#index-wrapper p {
+  font-family: Charter;
+  font-size: 1.3rem;
+  line-height: 1.58;
+  letter-spacing: -0.004em;
+}
+
+body {
+  font-family: Marat Sans Regular;
+  font-size: 1.1em;
+}
+
+h2 {
+  font-family: Marat Sans DemiBold;
+  font-size: 2.7rem;
+  margin-top: 0.5em;
+}
+
+a.light-theme {
+  color: #212529;
+  text-decoration: none;
+}
+
+a.light-theme:hover {
+  color: rgba(33, 37, 41, 0.7);
+  text-decoration: none;
+}
+
+a.dark-theme {
+  color: rgb(238, 238, 238);
+  text-decoration: none;
+}
+
+a.dark-theme:hover {
+  color: rgba(238, 238, 238, 0.7);
+  text-decoration: none;
+}
+
+.entry-meta {
+  font-family: Marat Sans Medium;
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.54);
+  margin-bottom: 1.2em;
 }
 
 .row {
@@ -174,11 +235,7 @@ a.skip-link {
 
 .dark-theme {
   background-color: rgb(50, 54, 57);
-  color: rgba(238, 238, 238, 1);
-}
-
-.dark-theme .btn {
-  color: blue;
+  color: rgba(238, 238, 238, 0.8);
 }
 
 @media (min-width: 768px) {
